@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "pembicaras" ALTER COLUMN "role" DROP NOT NULL,
+ALTER COLUMN "image" DROP NOT NULL;
