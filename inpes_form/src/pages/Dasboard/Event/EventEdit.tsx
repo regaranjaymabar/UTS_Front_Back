@@ -43,16 +43,16 @@ export default function EventEdit() {
     const fetchData = async () => {
       try {
         // Fetch Dropdown Data
-        const resCat = await fetch("http://localhost:3000/category");
+        const resCat = await fetch("https://uts-front-back.vercel.app/category");
         const dataCat = await resCat.json();
         setCategories(dataCat.data ? dataCat.data : dataCat);
 
-        const resSpk = await fetch("http://localhost:3000/pembicara");
+        const resSpk = await fetch("https://uts-front-back.vercel.app/pembicara");
         const dataSpk = await resSpk.json();
         setSpeakers(dataSpk.data ? dataSpk.data : dataSpk);
 
         // Fetch Event Detail berdasarkan ID
-        const resEvent = await fetch(`http://localhost:3000/event/${id}`);
+        const resEvent = await fetch(`https://uts-front-back.vercel.app/event/${id}`);
         const dataEvent = await resEvent.json();
 
         if (resEvent.ok) {
@@ -99,7 +99,7 @@ export default function EventEdit() {
         description: data.description,
       };
 
-      const res = await fetch(`http://localhost:3000/event/${id}`, {
+      const res = await fetch(`https://uts-front-back.vercel.app/event/${id}`, {
         method: "PUT", // <-- Perbedaan utama dengan create (PUT untuk update)
         headers: {
           "Content-Type": "application/json",

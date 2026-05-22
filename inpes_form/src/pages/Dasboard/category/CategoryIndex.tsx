@@ -12,7 +12,7 @@ export default function CategoryIndex() {
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const res = await fetch("http://localhost:3000/category");
+        const res = await fetch("https://uts-front-back.vercel.app/category");
         if (res.ok) {
           const data = await res.json();
           setCategories(data);
@@ -26,7 +26,7 @@ export default function CategoryIndex() {
 
   function handleDelete(id: number) {
     if (confirm("Apakah kamu yakin ingin menghapus kategori ini?")) {
-      fetch(`http://localhost:3000/category/${id}`, { method: "DELETE" })
+      fetch(`https://uts-front-back.vercel.app/category/${id}`, { method: "DELETE" })
         .then(() => {
           setCategories((prev) => prev.filter((cat) => cat.id !== id));
           alert("Data berhasil dihapus!");

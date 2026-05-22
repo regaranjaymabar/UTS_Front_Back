@@ -38,12 +38,12 @@ export default function EventCreate() {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const resCat = await fetch("http://localhost:3000/category");
+        const resCat = await fetch("https://uts-front-back.vercel.app/category");
         const dataCat = await resCat.json();
         // Cek struktur response (apakah bentuknya array atau terbungkus 'data')
         setCategories(dataCat.data ? dataCat.data : dataCat);
 
-        const resSpk = await fetch("http://localhost:3000/pembicara");
+        const resSpk = await fetch("https://uts-front-back.vercel.app/pembicara");
         const dataSpk = await resSpk.json();
         setSpeakers(dataSpk.data ? dataSpk.data : dataSpk);
       } catch (error) {
@@ -69,7 +69,7 @@ export default function EventCreate() {
       description: data.description,
     };
 
-    const res = await fetch("http://localhost:3000/event", {
+    const res = await fetch("https://uts-front-back.vercel.app/event", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

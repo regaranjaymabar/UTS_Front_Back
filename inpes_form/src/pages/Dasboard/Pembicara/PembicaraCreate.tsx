@@ -13,7 +13,7 @@ export default function PembicaraCreate() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/pembicara", {
+      const res = await fetch("https://uts-front-back.vercel.app/pembicara", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         // Kirim ketiga data lengkap ke backend

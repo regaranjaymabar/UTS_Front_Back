@@ -17,7 +17,7 @@ export default function EventIndex() {
   useEffect(() => {
     async function fetchEvents() {
       try {
-        const res = await fetch("http://localhost:3000/event");
+        const res = await fetch("https://uts-front-back.vercel.app/event");
         if (res.ok) {
           const data = await res.json();
           
@@ -38,7 +38,7 @@ export default function EventIndex() {
 
   function handleDelete(id: number) {
     if (confirm("Apakah kamu yakin ingin menghapus event ini?")) {
-      fetch(`http://localhost:3000/event/${id}`, { method: "DELETE" })
+      fetch(`https://uts-front-back.vercel.app/event/${id}`, { method: "DELETE" })
         .then(async (res) => {
           if (res.ok) {
             setEvents((prev) => prev.filter((evt) => evt.id !== id));

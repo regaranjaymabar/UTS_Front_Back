@@ -10,7 +10,7 @@ export default function CategoryEdit() {
   useEffect(() => {
     const fetchCategoryDetail = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/category/${id}`);
+        const res = await fetch(`https://uts-front-back.vercel.app/category/${id}`);
         const result = await res.json(); // simpan ke variabel 'result'
         
         if (res.ok) {
@@ -29,7 +29,7 @@ export default function CategoryEdit() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:3000/category/${id}`, {
+      const res = await fetch(`https://uts-front-back.vercel.app/category/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name }),

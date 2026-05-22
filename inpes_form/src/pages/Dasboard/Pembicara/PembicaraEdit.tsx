@@ -15,7 +15,7 @@ export default function PembicaraEdit() {
   useEffect(() => {
     const fetchPembicaraDetail = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/pembicara/${id}`);
+        const res = await fetch(`https://uts-front-back.vercel.app/pembicara/${id}`);
         const result = await res.json(); 
         
         if (res.ok) {
@@ -44,7 +44,7 @@ export default function PembicaraEdit() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:3000/pembicara/${id}`, {
+      const res = await fetch(`https://uts-front-back.vercel.app/pembicara/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         // Pastikan key-nya sesuai dengan yang ditangkap di pembicaraControler.ts (name, role, foto)

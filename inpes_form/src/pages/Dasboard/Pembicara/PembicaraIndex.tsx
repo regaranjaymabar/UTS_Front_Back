@@ -21,7 +21,7 @@ export default function PembicaraIndex() {
 
     const fetchPembicara = async () => {
       try {
-        const res = await fetch("http://localhost:3000/pembicara");
+        const res = await fetch("https://uts-front-back.vercel.app/pembicara");
         if (!res.ok) throw new Error("Gagal mengambil data");
         const data = await res.json();
         
@@ -47,7 +47,7 @@ export default function PembicaraIndex() {
         // Paksa konversi ke number murni menggunakan Number()
         const cleanId = Number(id);
 
-        const res = await fetch(`http://localhost:3000/pembicara/${cleanId}`, {
+        const res = await fetch(`https://uts-front-back.vercel.app/pembicara/${cleanId}`, {
           method: "DELETE",
         });
 

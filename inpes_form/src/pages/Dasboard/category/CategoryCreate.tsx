@@ -28,7 +28,7 @@ export default function CategoryCreate() {
     console.log("Mengirim data kategori:", data);
 
     // Kirim data ke backend di latar belakang (tanpa await yang bikin freeze)
-    fetch("http://localhost:3000/category", {
+    fetch("https://uts-front-back.vercel.app/category", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
