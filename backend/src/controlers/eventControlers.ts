@@ -47,7 +47,7 @@ export const saveEvents = async (req: Request, res: Response) => {
     
 };
 
-// 3. Show Event by ID (Ambil dari DB)
+// 3. Show Event by ID 
 export const showEventById = async (req: Request, res: Response) => {
     try {
         const eventId = parseInt(req.params.id as string, 10);

@@ -22,13 +22,12 @@ type Option = { id: number; name: string };
 
 export default function EventEdit() {
   const navigate = useNavigate();
-  const { id } = useParams(); // Mengambil ID dari URL
+  const { id } = useParams();
   const [categories, setCategories] = useState<Option[]>([]);
   const [speakers, setSpeakers] = useState<Option[]>([]);
   const [pageLoading, setPageLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Fungsi 'reset' dari react-hook-form sangat berguna untuk mengisi form otomatis
   const {
     register,
     handleSubmit,
@@ -58,8 +57,7 @@ export default function EventEdit() {
         if (resEvent.ok) {
           const ev = dataEvent.data;
           
-          // Memecah format ISO Database ke Tanggal dan Jam untuk UI
-          // Catatan: sesuaikan 'ev.dateEvent' jika di backend kamu menamainya 'date'
+
           const dateObj = new Date(ev.dateEvent || ev.date); 
           const tanggalFormat = dateObj.toISOString().split("T")[0]; // Hasil: YYYY-MM-DD
           const jamFormat = dateObj.toISOString().split("T")[1].substring(0, 5); // Hasil: HH:mm
@@ -100,7 +98,7 @@ export default function EventEdit() {
       };
 
       const res = await fetch(`https://uts-front-back.vercel.app/event/${id}`, {
-        method: "PUT", // <-- Perbedaan utama dengan create (PUT untuk update)
+        method: "PUT", 
         headers: {
           "Content-Type": "application/json",
         },

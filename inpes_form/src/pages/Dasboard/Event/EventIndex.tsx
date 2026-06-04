@@ -26,7 +26,7 @@ export default function EventIndex() {
           } else if (data.data && Array.isArray(data.data)) {
             setEvents(data.data);
           } else {
-            console.error("Format data dari backend tidak dikenali", data);
+            console.error("Format data dari backend tidak dikenalii", data);
           }
         }
       } catch (error) {

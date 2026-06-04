@@ -40,7 +40,7 @@ export default function EventCreate() {
       try {
         const resCat = await fetch("https://uts-front-back.vercel.app/category");
         const dataCat = await resCat.json();
-        // Cek struktur response (apakah bentuknya array atau terbungkus 'data')
+        // Cek struktur responser
         setCategories(dataCat.data ? dataCat.data : dataCat);
 
         const resSpk = await fetch("https://uts-front-back.vercel.app/pembicara");
@@ -63,7 +63,7 @@ export default function EventCreate() {
    const payload = {
       name: data.nama,
       categoryId: parseInt(data.categoryId, 10),
-      pembicaraId: parseInt(data.pembicaraId, 10), // ---> INI YANG KURANG SEBELUMNYA!
+      pembicaraId: parseInt(data.pembicaraId, 10), 
       location: data.location,
       date: isoDateTime, 
       description: data.description,

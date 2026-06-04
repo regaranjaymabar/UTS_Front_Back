@@ -6,6 +6,7 @@ interface InputPasswordProps{
     label:string;
     nama:string;
     error?:string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     register:any;
 }
 
