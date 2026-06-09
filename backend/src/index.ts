@@ -5,7 +5,7 @@ import categoryRoute from "./routes/categoryRoute.js"
 import pembicaraRoute from "./routes/pembicaraRoute.js";
 import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/userRoute.js";
-import { UNSAFE_createRouter } from "react-router-dom";
+
 
 const app = express();
 const port = 3000;
