@@ -4,6 +4,8 @@ import eventRoutes from "./routes/eventRoute.js"
 import categoryRoute from "./routes/categoryRoute.js"
 import pembicaraRoute from "./routes/pembicaraRoute.js";
 import authRoute from "./routes/authRoute.js";
+import userRoute from "./routes/userRoute.js";
+import { UNSAFE_createRouter } from "react-router-dom";
 
 const app = express();
 const port = 3000;
@@ -19,6 +21,7 @@ app.use("/event", eventRoutes)
 app.use("/category", categoryRoute)
 app.use("/pembicara", pembicaraRoute)
 app.use("/auth", authRoute)
+app.use("/user", userRoute)
 
 app.listen(port, () =>{
     console.log(`server is running on http://localhost:${port}`)

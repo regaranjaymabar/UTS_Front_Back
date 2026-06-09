@@ -34,6 +34,10 @@ export default function DashboardLayout(){
                         </li>
                         <li>
                             <Link className="block w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded"
+                            to="/dashboard/user">User</Link>
+                        </li>
+                        <li>
+                            <Link className="block w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded"
                             to="/dashboard">BioSaya</Link>
                         </li>
                     </ul>
